@@ -51,21 +51,16 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
   
   dateInputValue = () => {  
     
-      let input = document.getElementById("dateInput").value;
-      let dateEntered = new Date(input);
-      let year= dateEntered.getFullYear();
-      let month = dateEntered.getMonth()+1;
-      let day = dateEntered.getUTCDate();
+      const input = document.getElementById("dateInput").value;
+      const dateEntered = new Date(input);
+      const year= dateEntered.getFullYear();
+      const month = dateEntered.getMonth()+1;
+      const day = dateEntered.getUTCDate();
       
       this.setState({
          major: this.isMajor(day, month, year)
-      }) 
-      
-      this.reset();
-      console.log(this.state.major)
+      }, ()=> {this.reset()}) 
   }
-
-  // OU PLACER LA METHODE POUR ARRIVER AVANT LE CLICK 
 
   reset = () => {
     if(this.state.major === false ) {
