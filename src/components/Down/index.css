@@ -1,0 +1,7 @@
+.down {
+    background: red;
+}
+
+.down:hover {
+    background: pink;
+}
